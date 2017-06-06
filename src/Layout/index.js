@@ -13,7 +13,7 @@ const ContentWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 200px;
+    margin: 100px;
 `;
 
 const topLinks = [{to: '/', text: 'Swamp'}, {to: '/merch', text: 'Merch'}, {to: '/music', text: 'Music'}];
