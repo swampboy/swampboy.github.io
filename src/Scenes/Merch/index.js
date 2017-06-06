@@ -1,11 +1,8 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
+const merchLocation = 'basementrap.bigcartel.com';
 
-const Merch = () => {
-    return (
-        <div>
-            Merch
-        </div>
-    );
-};
-
+const Merch = () =>
+    window.location.href = merchLocation;
+    
 export default Merch;
