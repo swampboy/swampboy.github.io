@@ -5,7 +5,6 @@ import {
 } from 'react-router-dom'
 import Layout from './Layout';
 import { Swamp, Merch, Music, About, Contact } from './Scenes';
-const merchLocation = 'http://basementrap.bigcartel.com';
 
 class App extends PureComponent {
   render() {
@@ -15,7 +14,7 @@ class App extends PureComponent {
               <Route exact path="/" render={Swamp} />
               <Route exact path="/about" render={About} />
               <Route exact path="/contact" render={Contact} />
-              <Route exact path="/merch" render={() => <Merch merchLocation={merchLocation} />} />
+              <Route exact path="/merch" render={() => {}} />
               <Route exact path="/music" render={Music} />
           </Layout>
         </Router>
