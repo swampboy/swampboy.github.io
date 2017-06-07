@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { SoundcloudIconLink, SoundCloudTracks, FlexRow } from '../../Elements';
+import { SoundcloudIconLink, SoundCloudTracks } from '../../Elements';
 
 const Wrapper = styled.div`
     display: flex;
