@@ -16,7 +16,7 @@ const ContentWrapper = styled.div`
     margin: 100px;
 `;
 
-const topLinks = [{to: '/', text: 'Swamp'}, {to: 'http://basementrap.bigcartel.com', text: 'Merch'}, {to: '/music', text: 'Music'}];
+const topLinks = [{to: '/', text: 'Swamp'}, {to: 'https://basementrap.bigcartel.com', text: 'Merch'}, {to: '/music', text: 'Music'}];
 const bottomLinks = [{to: '/about', text: 'About'}, {to: '/contact', text: 'Contact'}];
 
 const Layout = props =>
