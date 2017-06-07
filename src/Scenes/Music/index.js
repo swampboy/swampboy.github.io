@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Soundcloud, FlexRow } from '../../Elements';
+import { SoundcloudIconLink, SoundCloudTracks, FlexRow } from '../../Elements';
 
 const Wrapper = styled.div`
     display: flex;
@@ -21,20 +21,13 @@ const Track = styled.div`
     }
 `;
 
-const StyledFlexRow = styled(FlexRow)`
-    border: 1px solid;
-    padding: 100px 0;    
-`;
-
 const Music = () =>
     <Wrapper>
-        <Soundcloud artist="butchdawson" size="48" />
-        <StyledFlexRow justify="space-between">
-            <Track />
-            <Track />
-            <Track />
-        </StyledFlexRow>
-        <Soundcloud artist="basementRap" size="48" />
+        <SoundcloudIconLink artist="butchdawson" size="48" />
+        <div>
+            <SoundCloudTracks />
+        </div>
+        <SoundcloudIconLink artist="basementRap" size="48" />
         
     </Wrapper>;
 export default Music;

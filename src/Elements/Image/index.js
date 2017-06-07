@@ -6,10 +6,11 @@ const Img = styled.img`
   margin: 0;
   padding: 0;
   height: ${({ size }) => size };
+  ${(props) => props.styles};
 `;
 
 const Image = props =>
-    <Img src={props.src} size={props.size}/>
+    <Img src={props.src} size={props.size} {...props} />
 
 Image.propTypes = {
     src: PropTypes.string.isRequired,
