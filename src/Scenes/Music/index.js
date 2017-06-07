@@ -9,18 +9,6 @@ const Wrapper = styled.div`
     width: 700px;
 `;
 
-const Track = styled.div`
-    width: 180px;
-    height: 180px;
-    background-color: grey;
-    border-radius: 15px;
-    margin: 100px 0;
-
-    &:active {
-        background-color: tomato;        
-    }
-`;
-
 const Music = () =>
     <Wrapper>
         <SoundcloudIconLink artist="butchdawson" size="48" />
