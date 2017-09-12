@@ -7,7 +7,6 @@ import {
 import store from './Redux/store';
 import Layout from './Layout';
 import { Swamp, Merch, Music, About, Contact } from './Scenes';
-const merchLocation = 'http://basementrap.bigcartel.com';
 
 class App extends PureComponent {
   render() {
