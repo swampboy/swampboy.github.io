@@ -22,7 +22,7 @@ const Link = (props) => {
     if (isInternalLink) {
         return (<ReactRouterLink to={to} {...rest}>{children}</ReactRouterLink>);
     } else {
-        return (<a href={to} target="_blank" {...rest}>{children}</a>);
+        return (<a href={to} target="_blank" rel="noopener noreferrer" {...rest}>{children}</a>);
     }
 }
 

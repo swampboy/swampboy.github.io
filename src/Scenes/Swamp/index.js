@@ -1,12 +1,23 @@
 import React from 'react';
 import { Image } from '../../Elements';
 import swamp from '../../Assets/Images/swamp.png';
+import styled from 'styled-components';
+
+const Wrapper = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
+
+const GatorButch = styled(Image)`
+    padding: 
+`;
 
 const Swamp = props => {
     return (
-        <div>
-            <Image src={swamp} />
-        </div>
+        <Wrapper>
+            <GatorButch src={swamp} />
+        </Wrapper>
     );
 };
 

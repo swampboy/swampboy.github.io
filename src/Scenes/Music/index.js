@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { compose, lifecycle } from 'recompose';
+import { connect } from 'react-redux';
 import { SoundcloudIconLink, SoundCloudTracks } from '../../Elements';
+import { fetchMusicAssets } from '../../Redux/actions';
 
 const Wrapper = styled.div`
     display: flex;
@@ -9,13 +13,23 @@ const Wrapper = styled.div`
     width: 700px;
 `;
 
-const Music = () =>
-    <Wrapper>
-        <SoundcloudIconLink artist="butchdawson" size="48" />
-        <div>
-            <SoundCloudTracks />
-        </div>
-        <SoundcloudIconLink artist="basementRap" size="48" />
-        
-    </Wrapper>;
-export default Music;
+const mapStateToProps = (state) => ({
+    music: state.music.data,
+});
+
+const enhance = compose(
+    connect(mapStateToProps, null),
+    lifecycle({
+        componentDidMount() {
+            const { dispatch } = this.props;
+            dispatch(fetchMusicAssets());
+        }
+    }),
+);
+
+const Music = ({ music }) =>
+    <div>
+        <SoundCloudTracks data={music}/>
+    </div>;
+
+export default enhance(Music);

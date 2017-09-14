@@ -25,7 +25,7 @@ const Nav = styled.div`
   : null}
 `;
 
-const createFlexNav = (l) => <li><Link to={`${l.to}`}>{l.text}</Link></li>
+const createFlexNav = (l) => <li key={l.text}><Link to={`${l.to}`}>{l.text}</Link></li>
 
 const Navbar = (props) => {
     return (
@@ -36,7 +36,7 @@ const Navbar = (props) => {
 };
 
 Navbar.propTypes = {
-    navlinks: PropTypes.arrayOf(PropTypes.object).isRequired,
+    links: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default Navbar;

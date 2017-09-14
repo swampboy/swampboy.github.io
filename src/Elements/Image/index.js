@@ -5,12 +5,12 @@ import styled from 'styled-components';
 const Img = styled.img`
   margin: 0;
   padding: 0;
-  height: ${({ size }) => size };
   ${(props) => props.styles};
+  max-width: 100%;
 `;
 
 const Image = props =>
-    <Img src={props.src} size={props.size} {...props} />
+    <Img className={props.className} src={props.src} size={props.size} {...props} />
 
 Image.propTypes = {
     src: PropTypes.string.isRequired,

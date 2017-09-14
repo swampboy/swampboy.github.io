@@ -1,9 +1,17 @@
-import { createStore } from 'redux'
-import { app } from './reducers'
+import thunkMiddleware from 'redux-thunk';
+import { createLogger } from 'redux-logger';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { music } from './reducers';
 
-let store = createStore(
-    app, 
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+const rootReducer = combineReducers({
+    music,
+});
+
+const loggerMiddleware = createLogger()
+
+const store = createStore(
+    rootReducer,
+    applyMiddleware(thunkMiddleware, loggerMiddleware)
 );
 
 export default store;

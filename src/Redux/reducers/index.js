@@ -1,8 +1,2 @@
-export const app = function (state = {
-  music: {},
-  posts: {},
-  authors: {},
-  copyText: {}
-}, action) {
-    return state
-  }
+export { default as music } from './music';
+

@@ -17,7 +17,6 @@ const Wrapper = styled.div`
 const Contact = props => {
     return (
         <Wrapper>
-            <div></div>
             <div>
                 <h2>All Inquiries</h2>
                 <p>findbutchdawnson@gmail.com</p>

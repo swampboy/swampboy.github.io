@@ -7,12 +7,16 @@
     "react-scripts": "1.0.7"
   },
   "dependencies": {
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4",
+    "react": "next",
+    "react-dom": "next",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.1.1",
+    "recompose": "^0.25.0",
     "redux": "^3.7.2",
-    "styled-components": "^2.0.0"
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.2.0",
+    "styled-components": "^2.0.0",
+    "svg4everybody": "^2.1.9"
   },
   "scripts": {
     "start": "react-scripts start",

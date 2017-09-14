@@ -1,29 +1,23 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import { Provider } from 'react-redux';
 import {
   BrowserRouter as Router,
   Route
-} from 'react-router-dom'
+} from 'react-router-dom';
 import store from './Redux/store';
 import Layout from './Layout';
-import { Swamp, Merch, Music, About, Contact } from './Scenes';
+import { Swamp, Music, About, Contact } from './Scenes';
 
-class App extends PureComponent {
-  render() {
-    return (
+const App = () => 
         <Provider store={store}>
           <Router>
             <Layout>
-                <Route exact path="/" render={Swamp} />
-                <Route exact path="/about" render={About} />
-                <Route exact path="/contact" render={Contact} />
-                <Route exact path="/merch" render={() => <Merch merchLocation={merchLocation} />} />
-                <Route exact path="/music" render={Music} />
+                <Route exact path="/" component={Swamp} />
+                <Route exact path="/about" component={About} />
+                <Route exact path="/contact" component={Contact} />
+                <Route exact path="/music" component={Music} />
             </Layout>
           </Router>
-        </Provider>
-    );
-  }
-}
+        </Provider>;
 
 export default App;
