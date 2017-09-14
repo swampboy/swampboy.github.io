@@ -11,8 +11,19 @@ const enhance = compose(
     withHandlers({
         onClick: props => e => {
             props.toggleMenu(!props.active);
+        },
+        onClickOutside: () => {
+            let element = null;
+            return {
+              onRef: () => (ref) => (element = ref),
+              onWrapperBlur: ({ onClickOutside }) => (e) => {
+                if (!element.contains(e.relatedTarget)) {
+                  onClickOutside();
+                }
+              }
+            }
         }
-      })
+    })
 );
 
 const on = keyframes`
@@ -73,9 +84,9 @@ const Button = styled.button`
 const MenuIcon = styled(Icon)`
 `;
 
-const hydrateLink = (l) => <li key={l.text}><Link to={`${l.to}`}>{l.text}</Link></li>
+// const hydrateLink = (l) => <li onClick={onClick} active={active} key={l.text}><Link to={`${l.to}`}>{l.text}</Link></li>
 
-const MobileNav = ({ links, onClick, active, className }) => (
+const MobileNav = ({ links, onClick, active, onRef, onWrapperBlur, className }) => (
     <Nav className={className}>
         <Callouts>
             <h1>Swamp Boy</h1>
@@ -88,8 +99,12 @@ const MobileNav = ({ links, onClick, active, className }) => (
             </Button>
         </Callouts>
         {active && 
-            <Ul active={active} >
-                {links.map(hydrateLink)}
+            <Ul active={active} ref={onRef} onBlur={onWrapperBlur}>
+                {links.map((l) => 
+                    <li onClick={onClick} active={active} key={l.text}>
+                        <Link to={`${l.to}`}>{l.text}</Link>
+                    </li>)
+                }
             </Ul>
         }
     </Nav>
