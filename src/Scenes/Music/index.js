@@ -3,15 +3,22 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { compose, lifecycle } from 'recompose';
 import { connect } from 'react-redux';
-import { SoundcloudIconLink, SoundCloudTracks } from '../../Elements';
+import staticImage from '../../Assets/Images/Soundcloud.gif';
+
+import { SoundcloudIconLink, SoundCloudTracks, Image, Link } from '../../Elements';
 import { fetchMusicAssets } from '../../Redux/actions';
 
 const Wrapper = styled.div`
-    display: flex;
+    display: flex; 
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    width: 700px;
 `;
+
+const Cloud = styled.div`
+    max-width: 200px;
+`;
+
 
 const mapStateToProps = (state) => ({
     music: state.music.data,
@@ -27,9 +34,14 @@ const enhance = compose(
     }),
 );
 
-const Music = ({ music }) =>
-    <div>
+const Music = ({ music, className }) =>
+    <Wrapper className={className}>
+        <Cloud>
+            <Link to="http://soundcloud.com/butchdawson">
+                <Image src={staticImage} />
+            </Link>
+        </Cloud>
         <SoundCloudTracks data={music}/>
-    </div>;
+    </Wrapper>;
 
 export default enhance(Music);

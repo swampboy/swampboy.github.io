@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
+
 const StylediFrame = styled.iframe`
     border: none;
     width: ${({ size }) => size}px;
@@ -10,12 +11,12 @@ const StylediFrame = styled.iframe`
 
 const Soundcloud = props =>
     <StylediFrame 
-    title="soundcloud"
-    allowtransparency="true" 
-    scrolling="no" 
-    frameborder="no" 
-    src={`https://w.soundcloud.com/icon/?url=http%3A%2F%2Fsoundcloud.com%2F${props.artist}&color=orange_transparent&size=${props.size}`} 
-    size={props.size}>
+        title="soundcloud"
+        allowtransparency="true" 
+        scrolling="no" 
+        frameborder="no" 
+        src={`https://w.soundcloud.com/icon/?url=http%3A%2F%2Fsoundcloud.com%2F${props.artist}&color=orange_transparent&size=${props.size}`} 
+        size={props.size}>
     </StylediFrame>
 
 Soundcloud.propTypes = {
@@ -26,5 +27,6 @@ Soundcloud.propTypes = {
 Soundcloud.defaultProps = {
     size: '48',
 };
+
 
 export default Soundcloud;

@@ -7,6 +7,8 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 70vh;
+    max-width: 500px;
 `;
 
 const GatorButch = styled(Image)`

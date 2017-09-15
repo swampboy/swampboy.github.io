@@ -4,26 +4,41 @@ import { Image } from '../';
 
 const TrackTiles = styled.div`
     display: flex;
-    flex: 1 0 50%;
-    flex-wrap: wrap;
-    margin: 50px 0;
+
+    justify-content: center;
+    align-items: center;
+
+    @media only screen and (max-width: 500px) {
+        display: block;
+    }
 `;
 
 const ImageWrap = styled.a`
-    display: flex;
+    position: relative;
+    display: flex; // for art and title stacking
     flex-direction: column;
-    align-items: center;
-    padding: 10px;
-    margin: 32px 0;
+    text-align: center;
     text-decoration: none;
+    padding: 2em   
 `;
 
 const RoundedImage = `
     border-radius: 15px;
+    width: 300px;
+    object-fit: cover;
+    box-shadow: 10px 15px 25px 0 rgba(0,0,0,.2);
+
+    transition: box-shadow .5s cubic-bezier(0.645, 0.045, 0.355, 1);
+    margin-top: -10px;
+
+    &:hover {
+        box-shadow: 1px 1px 10px 0 rgba(0,0,0,.1);
+  
+      }
 `;
 
-const SoundCloudTracks = ({ data }) => console.log(data) ||
-    <TrackTiles>
+const SoundCloudTracks = ({ data, className }) => console.log(data) ||
+    <TrackTiles className={className}>
         {
             data.map((item, i) =>
                 <ImageWrap href={item.link} key={item.id}>

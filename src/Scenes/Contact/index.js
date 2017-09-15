@@ -1,25 +1,45 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Image } from '../../Elements';
+import mail from '../../Assets/Images/mail.gif';
 
 const Wrapper = styled.div`
     display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
 
-    div:first-of-type {
-        height: 100px;
-        width: 200px;
-        background-color: grey;
-        border-radius: 2%;
-        margin-right: 15%;
+    @media only screen and (max-width: 620px) {
+        flex-direction: column;
+        img {
+            margin: 0;
+            padding: 0;
+        }
     }
 `;
 
+const Mail = styled(Image)`
+    max-width: 168px;
+    margin: 2em;
+`;
+
+const H1 = styled.h1`
+    font-size: 1.75em;
+    padding-bottom: 0;
+    margin-bottom: 0;
+`;
+
+const Email = styled.a`
+    text-decoration: none;
+`;
 
 const Contact = props => {
     return (
         <Wrapper>
+            <Mail src={mail} />
             <div>
-                <h2>All Inquiries</h2>
-                <p>findbutchdawnson@gmail.com</p>
+                <H1>All inquires</H1>
+                <Email href="mailto:findbutchdawson@gmail.com">findbutchdawson@gmail.com</Email>
             </div>
         </Wrapper>
     );

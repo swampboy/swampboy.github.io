@@ -4,10 +4,11 @@ import { Image } from '../../Elements';
 import about from '../../Assets/Images/about.png';
 
 
-const Wrapper = styled.div`
-    margin-top: 7em;
+const Wrapper = styled.section`
     max-width: 363px;
+    height: 75vh;
     text-transform: uppercase;
+    display: flex;
 `;
 
 const H1 = styled.h1`
@@ -36,12 +37,18 @@ const P = styled.p`;
     text-transform: none;    
 `;
 
+const Copy = styled.article`;
+    align-self: flex-end;
+`;
+
 const About = props => {
     return (
         <Wrapper>
-            <H1>Butch Dawson</H1>
-            <H2>Baltimore</H2>
-            <P>dolor sit amet, consectetur adipiscing elit. Mauris in tellus luctus, fringilla elit id, faucibus metus. Praesent aliquet, ligula non convallis. dolor sit amet, consectetur adipiscing elit. Mauris in tellus luctus, fringilla elit id, faucibus metus. Praesent aliquet, ligula non convallis.</P>
+            <Copy>
+                <H1>Butch Dawson</H1>
+                <H2>Baltimore</H2>
+                <P>dolor sit amet, consectetur adipiscing elit. Mauris in tellus luctus, fringilla elit id, faucibus metus. Praesent aliquet, ligula non convallis. dolor sit amet, consectetur adipiscing elit. Mauris in tellus luctus, fringilla elit id, faucibus metus. Praesent aliquet, ligula non convallis.</P>
+            </Copy>
         </Wrapper>
     );
 };

@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 import styled, { keyframes } from 'styled-components';
 import { withState, withHandlers, compose } from 'recompose';
 import { FadeIn } from '../';
-import { Link } from '../../Elements';
+import { Link, Image } from '../../Elements';
 import Icon from '../Icon';
+import swamp_boy_text from '../../Assets/Images/swamp_boy_text.png';
 
 const enhance = compose(
     withState('active', 'toggleMenu', false),
@@ -36,31 +37,39 @@ const on = keyframes`
 `;
 
 const off = keyframes`
-0%, 100% {
-    opacity: 1
-}
-50% {
-    opacity: 0
-}
+    0%, 100% {
+        opacity: 1
+    }
+    50% {
+        opacity: 0
+    }
 `;
 
 const Nav = styled.nav`
+    position: relative;
     display: flex;
     align-items: flex-end;
     flex-direction: column;
     text-align: right;
+
+    a {
+        text-decoration: none;
+        color: rgba(100, 98, 98, 1);
+    }
 `;
 
 const Ul = styled.ul`
     list-style-type: none;
-    animation: ${({ active }) => active ? on : off} 1s ease-in-out;
+    position: absolute;
+    right: 0;
+    top: 3em;
+    
+
+    opacity: ${({ active }) => +active };
+    transition: opacity 200ms ease;
+
     padding: 0;
-    margin:  0;  
-    a {
-        text-decoration: none;
-        font-size: 1.3em;
-        color: rgba(100, 98, 98, 1);
-    }
+    margin:  0;
 `;
 
 const Callouts = styled.div`
@@ -81,7 +90,12 @@ const Button = styled.button`
     cursor: pointer;
 `;
 
-const MenuIcon = styled(Icon)`
+const LogoWrap = styled.div`
+    max-width: 100%;
+`;
+
+const H1 = styled.h1`
+    max-width: 100%;
 `;
 
 // const hydrateLink = (l) => <li onClick={onClick} active={active} key={l.text}><Link to={`${l.to}`}>{l.text}</Link></li>
@@ -89,24 +103,29 @@ const MenuIcon = styled(Icon)`
 const MobileNav = ({ links, onClick, active, onRef, onWrapperBlur, className }) => (
     <Nav className={className}>
         <Callouts>
-            <h1>Swamp Boy</h1>
+            {/**
+             * <LogoWrap>
+                <Image src={swamp_boy_text}/>
+            </LogoWrap>
+             */}
+             <Link to="/">
+                <H1>Swamp Boy</H1>
+             </Link>
             <Button onClick={onClick}>
-                <MenuIcon 
+                <Icon 
                     active={active} 
                     size="2em" 
                     name="hamburger" 
                 />
             </Button>
         </Callouts>
-        {active && 
-            <Ul active={active} ref={onRef} onBlur={onWrapperBlur}>
-                {links.map((l) => 
-                    <li onClick={onClick} active={active} key={l.text}>
-                        <Link to={`${l.to}`}>{l.text}</Link>
-                    </li>)
-                }
-            </Ul>
-        }
+        <Ul active={active} ref={onRef} onBlur={onWrapperBlur}>
+            {links.map((l) => 
+                <li onClick={onClick} active={active} key={l.text}>
+                    <Link to={`${l.to}`}>{l.text}</Link>
+                </li>)
+            }
+        </Ul>
     </Nav>
 );
 
