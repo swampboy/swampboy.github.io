@@ -46,6 +46,11 @@ const off = keyframes`
 `;
 
 const Nav = styled.nav`
+        
+    @media (min-device-width: 768px)  {
+        display: none;
+    }
+
     position: relative;
     display: flex;
     align-items: flex-end;
@@ -56,6 +61,8 @@ const Nav = styled.nav`
         text-decoration: none;
         color: rgba(100, 98, 98, 1);
     }
+
+    
 `;
 
 const Ul = styled.ul`
@@ -70,6 +77,10 @@ const Ul = styled.ul`
 
     padding: 0;
     margin:  0;
+
+    li {
+        font-size: 1.3em;
+    }
 `;
 
 const Callouts = styled.div`
@@ -96,6 +107,7 @@ const LogoWrap = styled.div`
 
 const H1 = styled.h1`
     max-width: 100%;
+    text-transform: uppercase;
 `;
 
 // const hydrateLink = (l) => <li onClick={onClick} active={active} key={l.text}><Link to={`${l.to}`}>{l.text}</Link></li>

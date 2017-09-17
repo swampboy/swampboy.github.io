@@ -9,6 +9,7 @@
   "dependencies": {
     "react": "next",
     "react-dom": "next",
+    "react-helmet": "^5.2.0",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.1.1",
     "recompose": "^0.25.0",
@@ -26,5 +27,5 @@
     "predeploy": "yarn run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://robinsonkameron.github.io/butch-dawson-swamp"
+  "homepage": "https://swamboy.github.io"
 }

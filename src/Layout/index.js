@@ -26,12 +26,12 @@ const allLinks = [...topLinks, ...bottomLinks];
 
 const Layout = props =>
         <Main>
-            {/* <Navbar links={topLinks} /> */}
+            <Navbar links={topLinks} />
             <MobileNav links={allLinks}/>
                 <ContentWrapper>
                     {props.children}
                 </ContentWrapper>
-            {/* <Navbar position="bottom" links={bottomLinks} /> */}
+            <Navbar position="bottom" links={bottomLinks} />
         </Main>;
 
 Layout.propTypes = {

@@ -4,7 +4,10 @@ import styled from 'styled-components';
 import { Link } from '../../Elements';
 
 const Nav = styled.div`
-  display: flex;
+  @media (min-device-width: 768px)  {
+    display: flex;
+  }
+  display: none;
   flex-direction: row;
   justify-content: space-around;
   list-style-type: none;
