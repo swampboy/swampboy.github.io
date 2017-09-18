@@ -47,7 +47,7 @@ const off = keyframes`
 
 const Nav = styled.nav`
         
-    @media screen (min-device-width: 768px)  {
+    @media (min-device-width: 768px)  {
         display: none;
     }
 

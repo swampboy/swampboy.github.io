@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { Link } from '../../Elements';
 
 const Nav = styled.div`
-  @media screen (min-device-width: 768px)  {
+  @media (min-device-width: 768px)  {
     display: flex;
   }
   display: none;
