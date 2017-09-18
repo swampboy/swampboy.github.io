@@ -27,5 +27,5 @@
     "predeploy": "yarn run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://swamboy.github.io"
+  "homepage": "https://robinsonkameron.github.io/butch-dawson-swamp"
 }
