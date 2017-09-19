@@ -26,7 +26,7 @@ const App = () =>
                   <meta property="og:image" content={swampImg} />
                   <meta property="og:site_name" content="SWAMP BOY MUSIC PAGE"/>
                   <meta property="og:description" content={metaDescription} />
-                  <!-- Global Site Tag (gtag.js) - Google Analytics -->
+
                   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-72114421-2"></script>
                   <script>
                     window.dataLayer = window.dataLayer || [];
