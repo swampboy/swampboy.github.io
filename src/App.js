@@ -21,9 +21,8 @@ const App = () =>
                 <Helmet>
                   <meta charSet="utf-8" />
                   <title>SWAMP BOY</title>
-
-                  <meta property="og:title" content="SWAMP BOY"/>
                   <meta property="og:image" content={swampImg} />
+                  <meta property="og:title" content="SWAMP BOY"/>
                   <meta property="og:site_name" content="SWAMP BOY MUSIC PAGE"/>
                   <meta property="og:description" content={metaDescription} />
                 </Helmet>

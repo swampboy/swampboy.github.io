@@ -19,12 +19,17 @@ const ImageWrap = styled.a`
     flex-direction: column;
     text-align: center;
     text-decoration: none;
-    padding: 2em   
+    padding: 2em;
+    color: rgba(100, 98, 98, .5);
+    transition: color 200ms ease-in-out;
+    &:hover {
+        color: rgba(100, 98, 98, 1);
+    }
 `;
 
 const RoundedImage = `
     border-radius: 15px;
-    width: 300px;
+    width: 250px;
     object-fit: cover;
     box-shadow: 10px 15px 25px 0 rgba(0,0,0,.2);
 

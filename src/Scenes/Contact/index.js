@@ -31,6 +31,11 @@ const H1 = styled.h1`
 
 const Email = styled.a`
     text-decoration: none;
+    color: rgba(100, 98, 98, .5);
+    transition: color 200ms ease-in-out;
+    &:hover {
+        color: rgba(100, 98, 98, 1);
+    }
 `;
 
 const Contact = props => {
