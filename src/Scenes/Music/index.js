@@ -18,7 +18,7 @@ const Wrapper = styled.div`
 
 const Cloud = styled.div`
     max-width: 200px;
-    margin: 1.5em;
+    margin: 3em;
 `;
 
 const BasementRap = styled.div`
