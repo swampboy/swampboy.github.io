@@ -24,7 +24,7 @@ const Mail = styled(Image)`
 `;
 
 const H1 = styled.h1`
-    font-size: 1.75em;
+    // font-size: 1.75em;
     padding-bottom: 0;
     margin-bottom: 0;
 `;

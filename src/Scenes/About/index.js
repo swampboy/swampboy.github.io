@@ -15,10 +15,10 @@ const H1 = styled.h1`
     margin-bottom: .2em;
     padding: 0px;
     font-weight: bold;
-    font-size: 1.75em;
+    // font-size: 1.75em;
 
     @media (max-device-width: 320px)  {
-        font-size: 3em;
+        // font-size: 3em;
     }
     
 `;
@@ -26,7 +26,7 @@ const H1 = styled.h1`
 const H2 = styled.h2`
     margin 0 0 2em 0;
     padding: 0;
-    font-size: 1.125em;
+    // font-size: 1.125em;
     font-weight: bold;
     
 `;

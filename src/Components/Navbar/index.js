@@ -9,23 +9,15 @@ const Nav = styled.div`
   }
   display: none;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   list-style-type: none;
   padding: 1em 0;
   
   a {
     text-decoration: none;
-    font-size: 1.3em;
     color: rgba(100, 98, 98, 1);
   }
 
-  ${({ position }) => position === 'bottom' ? 
-    `
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    `
-  : null}
 `;
 
 const createFlexNav = (l) => <li key={l.text}><Link to={`${l.to}`}>{l.text}</Link></li>
