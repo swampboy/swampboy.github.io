@@ -27,6 +27,21 @@ export const getMusicAssets = removeWhitespace(`
   }
 `);
 
+export const getAboutCopy = removeWhitespace(`
+{
+  Author(id:"cj7sj522ozzoe0122n5tz38fp") {
+		id,
+  	city,
+    authorName,
+    authorBibliography,
+    authorImage {
+      id,
+      url
+    }
+  }
+}
+`);
+
 export const getBlogPosts = removeWhitespace(`
 {
     allBlogPosts {

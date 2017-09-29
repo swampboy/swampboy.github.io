@@ -4,7 +4,8 @@ import { Image } from '../';
 
 const TrackTiles = styled.div`
     display: flex;
-
+    flex-wrap: wrap;
+    
     justify-content: center;
     align-items: center;
 
@@ -16,6 +17,8 @@ const TrackTiles = styled.div`
 const ImageWrap = styled.a`
     position: relative;
     display: flex; // for art and title stacking
+    max-width: 100%;
+    max-height: 100%;
     flex-direction: column;
     text-align: center;
     text-decoration: none;
@@ -31,14 +34,14 @@ const RoundedImage = `
     border-radius: 15px;
     width: 250px;
     object-fit: cover;
-    box-shadow: 10px 15px 25px 0 rgba(0,0,0,.2);
+    box-shadow: 1px 1px 10px 0 rgba(0,0,0, .01);
 
-    transition: box-shadow .5s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: box-shadow .6s ease-in-out;
     margin-top: -10px;
 
     &:hover {
-        box-shadow: 1px 1px 10px 0 rgba(0,0,0,.1);
-  
+        box-shadow: 8px 16px 15px 0 rgba(0,0,0, .4);
+        
       }
 `;
 

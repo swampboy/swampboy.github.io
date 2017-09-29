@@ -26,13 +26,10 @@ const BasementRap = styled.div`
     margin: 1em;
 `;
 
-
-const mapStateToProps = (state) => ({
-    music: state.music.data,
-});
-
 const enhance = compose(
-    connect(mapStateToProps, null),
+    connect((state) => ({
+        music: state.music.data,
+    }), null),
     lifecycle({
         componentDidMount() {
             const { dispatch } = this.props;
