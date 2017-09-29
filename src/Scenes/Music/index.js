@@ -17,12 +17,12 @@ const Wrapper = styled.div`
 `;
 
 const Cloud = styled.div`
-    max-width: 200px;
+    max-width: 100px;
     margin: 3em;
 `;
 
 const BasementRap = styled.div`
-    max-width: 150px;
+    max-width: 75px;
     margin: 1em;
 `;
 

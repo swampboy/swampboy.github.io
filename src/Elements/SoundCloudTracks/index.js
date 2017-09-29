@@ -1,6 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Image } from '../';
+import {
+    compose,
+    withState,
+    withHandlers,
+} from 'recompose';
 
 const TrackTiles = styled.div`
     display: flex;
@@ -14,6 +19,7 @@ const TrackTiles = styled.div`
     }
 `;
 
+
 const ImageWrap = styled.a`
     position: relative;
     display: flex; // for art and title stacking
@@ -23,7 +29,7 @@ const ImageWrap = styled.a`
     text-align: center;
     text-decoration: none;
     padding: 2em;
-    color: rgba(100, 98, 98, .5);
+    color: rgba(100, 98, 98, .0);
     transition: color 200ms ease-in-out;
     &:hover {
         color: rgba(100, 98, 98, 1);
@@ -41,17 +47,16 @@ const RoundedImage = `
 
     &:hover {
         box-shadow: 8px 16px 15px 0 rgba(0,0,0, .4);
-        
       }
 `;
 
-const SoundCloudTracks = ({ data, className }) => console.log(data) ||
+const SoundCloudTracks = ({ data, className}) => console.log(data) ||
     <TrackTiles className={className}>
         {
             data.map((item, i) =>
                 <ImageWrap href={item.link} key={item.id}>
-                    <Image src={item.cover[0].url} size="300px" styles={RoundedImage}/>
-                    <h2>{item.title}</h2>
+                    <Image src={item.cover[0].url} size="300px" styles={RoundedImage} />
+                    <h4>{item.title}</h4>
                 </ImageWrap>
             )
         }

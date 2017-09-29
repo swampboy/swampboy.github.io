@@ -41,11 +41,9 @@ const Email = styled.a`
 const Contact = props => {
     return (
         <Wrapper>
-            <Mail src={mail} />
-            <div>
-                <H1>All inquires</H1>
-                <Email href="mailto:findbutchdawson@gmail.com">findbutchdawson@gmail.com</Email>
-            </div>
+            <Email href="mailto:findbutchdawson@gmail.com">
+                <Mail src={mail}/>
+            </Email>
         </Wrapper>
     );
 };
