@@ -40,14 +40,18 @@ const RoundedImage = `
     border-radius: 15px;
     width: 250px;
     object-fit: cover;
-    box-shadow: 1px 1px 10px 0 rgba(0,0,0, .01);
+    filter: drop-shadow(1px 1px 10px rgba(0,0,0, .01));
 
-    transition: box-shadow .6s ease-in-out;
+    transition: filter .6s ease-in-out;
     margin-top: -10px;
 
     &:hover {
-        box-shadow: 8px 16px 15px 0 rgba(0,0,0, .4);
+        filter: drop-shadow(8px 16px 15px rgba(0,0,0, .4));
       }
+
+    @media only screen and (max-width: 320px) {
+        width: 200px;
+    }
 `;
 
 const SoundCloudTracks = ({ data, className}) => console.log(data) ||
