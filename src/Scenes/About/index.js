@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Image } from '../../Elements';
+import { Image, Loader } from '../../Elements';
 import about from '../../Assets/Images/about.png';
 import { fetchAboutCopy } from '../../Redux/actions';
 import { compose, lifecycle } from 'recompose';
@@ -50,7 +50,8 @@ const Copy = styled.article`;
 
 const enhance = compose(
     connect((state) => ({
-        author: state.about.data.Author || {}
+        author: state.about.data.Author || {},
+        isFetching: state.about.isFetching,
     }), null),
     lifecycle({
         componentDidMount() {
@@ -60,9 +61,11 @@ const enhance = compose(
     }),
 );
 
-const About = enhance(({ author: { authorName, city, authorBibliography, authorImage } }) => (
+const About = enhance(({ author: { authorName, city, authorBibliography, authorImage }, isFetching }) => (
     <Container>
         <StyledImage src={authorImage.url} alt={authorName} />
+        {
+        !isFetching && 
         <Wrapper>
             <Copy>
                 <H1>{authorName}</H1>
@@ -70,6 +73,8 @@ const About = enhance(({ author: { authorName, city, authorBibliography, authorI
                 <P>{authorBibliography}.</P>
             </Copy>
         </Wrapper>
+        || <Loader />
+        }
     </Container>
 ));
 

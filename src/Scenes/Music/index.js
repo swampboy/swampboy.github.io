@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { compose, lifecycle } from 'recompose';
+import { compose, lifecycle, branch, renderNothing } from 'recompose';
 import { connect } from 'react-redux';
 import soundCloudImage from '../../Assets/Images/Soundcloud.gif';
 import basementRapImage from '../../Assets/Images/icon_brlogo.png';
 
-import { SoundcloudIconLink, SoundCloudTracks, Image, Link } from '../../Elements';
+import { SoundcloudIconLink, SoundCloudTracks, Image, Link, Loader } from '../../Elements';
 import { fetchMusicAssets } from '../../Redux/actions';
 
 const Wrapper = styled.div`
@@ -28,6 +28,7 @@ const BasementRap = styled.div`
 
 const enhance = compose(
     connect((state) => ({
+        isFetching: state.music.isFetching,
         music: state.music.data,
     }), null),
     lifecycle({
@@ -35,17 +36,17 @@ const enhance = compose(
             const { dispatch } = this.props;
             dispatch(fetchMusicAssets());
         }
-    }),
+    })
 );
 
-const Music = ({ music, className }) =>
+const Music = ({ music, className, isFetching }) =>
     <Wrapper className={className}>
         <Cloud>
             <Link to="http://soundcloud.com/butchdawson">
                 <Image src={soundCloudImage} />
             </Link>
         </Cloud>
-        <SoundCloudTracks data={music}/>
+        {!isFetching && <SoundCloudTracks data={music} /> || <Loader />}
         <BasementRap>
             <Image src={basementRapImage} />        
         </BasementRap>

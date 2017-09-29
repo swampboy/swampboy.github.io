@@ -1,11 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Image } from '../';
-import {
-    compose,
-    withState,
-    withHandlers,
-} from 'recompose';
 
 const TrackTiles = styled.div`
     display: flex;
